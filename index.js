@@ -304,6 +304,11 @@ function buildMetadata(metadata) {
     }
   }
 
+  if (metadata.artworkURI){
+    var title = et.SubElement(item, 'upnp:albumArtURI');
+    title.text = metadata.artworkURI;
+  }
+
   if(metadata.url && metadata.protocolInfo) {
     var res = et.SubElement(item, 'res');
     res.set('protocolInfo', metadata.protocolInfo);
